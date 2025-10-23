@@ -36,13 +36,13 @@ export default function BookingCalendar() {
 
   const availableDates = getAvailableDates()
 
-  const formatDate = (date: Date) => {
-    return date.toLocaleDateString("es-CR", {
-      weekday: "short",
-      day: "numeric",
-      month: "short",
-    })
-  }
+  // const formatDate = (date: Date) => {
+  //   return date.toLocaleDateString("es-CR", {
+  //     weekday: "short",
+  //     day: "numeric",
+  //     month: "short",
+  //   })
+  // }
 
   const formatFullDate = (date: Date) => {
     return date.toLocaleDateString("es-CR", {
