@@ -63,12 +63,12 @@ export default function Services() {
       <div className="container mx-auto px-4">
         <FramerMotion direction="down" duration={1.5}>
 
-        <div className="text-center space-y-4 mb-16">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-balance">Nuestros Servicios</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Elige el paquete perfecto para tu vehículo. Todos incluyen productos premium y garantía de satisfacción.
-          </p>
-        </div>
+          <div className="text-center space-y-4 mb-20">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-balance">Nuestros Servicios</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
+              Elige el paquete perfecto para tu vehículo. Todos incluyen productos premium y garantía de satisfacción.
+            </p>
+          </div>
         </FramerMotion>
         <FramerMotion direction="up" duration={1.5}>
 
@@ -95,6 +95,7 @@ export default function Services() {
                   <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gray-100">
                     <Icon className="h-8 w-8 text-blue-500" />
                   </div>
+                  {/* <img src="https://media.istockphoto.com/id/1287044692/es/foto/trabajador-lavando-el-coche-rojo-con-esponja-en-un-lavado-de-coches.jpg?s=612x612&w=0&k=20&c=BL7c0IKAIOPf-4XEzdw1DELOSYu9rdzW95oaqggg6R8=" alt="" /> */}
                   <CardTitle className="text-2xl">{service.name}</CardTitle>
                   <CardDescription className="text-base">{service.description}</CardDescription>
                   <div className="mt-4">
