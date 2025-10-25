@@ -2,6 +2,7 @@ import { Check, Sparkles, Star, Crown } from "lucide-react"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "../../components/ui/Card"
 import FramerMotion from "../../components/FramerMotion"
 import Swal from "sweetalert2"
+import PolicityPay from "../../components/PolicityPay"
 const services = [
   {
     name: "Básico",
@@ -145,6 +146,7 @@ export default function Services() {
             )
           })}
         </div>
+        <PolicityPay />
         </FramerMotion>
       </div>
     </section>
