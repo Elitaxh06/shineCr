@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react"
 import FramerMotion from "../../components/FramerMotion"
 import { Droplets, Sparkles } from "lucide-react"
+import 
+  logo
+from "../../../public/img/Logo.png"
 export default function Hero() {
    const [isVisible, setIsVisible] = useState(false)
 
@@ -18,7 +21,7 @@ export default function Hero() {
     <section className="relative bg-[#02192F] text-white overflow-hidden h-screen">
       <div className="absolute inset-0">
         <img
-          src="https://img.freepik.com/foto-gratis/hombre-lavando-coche-estacion-lavado-coches-chaleco-naranja_651396-2008.jpg?semt=ais_hybrid&w=740&q=80"
+          src={logo}
           alt="Car wash background"
           className="w-full h-full object-cover opacity-20"
         />
@@ -33,7 +36,7 @@ export default function Hero() {
         >
           <div className="flex items-center justify-center gap-3 mb-6 animate-bounce-slow">
             <Droplets className="h-12 w-12 md:h-16 md:w-16 text-cyan-500" />
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-balance">Lavacar Express</h1>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-balance">ShineCR</h1>
             <Sparkles className="h-12 w-12 md:h-16 md:w-16 text-cyan-500" />
           </div>
 
@@ -48,7 +51,7 @@ export default function Hero() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
             <button
-              className="text-lg px-8 py-6 rounded-full bg-[#4AB6C7] text-primary-foreground hover:bg-primary/90 shadow-lg cursor-pointerff font-bold hover:shadow-xl transition-all hover:scale-105"
+              className="text-lg px-8 py-6 rounded-full bg-[#4AB6C7] text-primary-foreground hover:bg-primary/90 shadow-lg cursor-pointerff font-bold hover:shadow-xl transition-all hover:scale-105 cursor-pointer"
               onClick={scrollToCalendar}
               >
               Reservar lavado

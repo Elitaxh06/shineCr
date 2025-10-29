@@ -29,7 +29,7 @@ export function Contact() {
         </div>
 
         <div className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-8">
-          <Card className="border-2">
+          <Card className="border-2 border-gray-300">
             <CardHeader>
               <CardTitle className="text-2xl">Envíanos un Mensaje</CardTitle>
               <CardDescription className="text-gray-500">Responderemos lo más pronto posible</CardDescription>
@@ -82,7 +82,7 @@ export function Contact() {
           </Card>
 
           <div className="space-y-6">
-            <Card className="border-2">
+            <Card className="border-2 border-gray-300">
               <CardContent className="pt-6">
                 <div className="flex items-start gap-4">
                   <div className="h-12 w-12 rounded-full bg-gray-200 flex items-center justify-center shrink-0">
@@ -91,19 +91,19 @@ export function Contact() {
                   <div>
                     <h3 className="font-semibold text-lg mb-1">Teléfono / WhatsApp</h3>
                     <a
-                      href="https://wa.me/50612345678"
+                      href="https://wa.me/84800828"
                       className="text-sky-500 hover:underline text-lg"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      +506 1234-5678
+                      +506 8480-0828
                     </a>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="border-2">
+            <Card className="border-2 border-gray-300">
               <CardContent className="pt-6">
                 <div className="flex items-start gap-4">
                   <div className="h-12 w-12 rounded-full bg-gray-200 flex items-center justify-center shrink-0">
@@ -111,15 +111,15 @@ export function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-1">Correo Electrónico</h3>
-                    <a href="mailto:info@lavacarexpress.com" className="text-sky-500 hover:underline text-lg">
-                      info@lavacarexpress.com
+                    <a href="mailto:shinecr.servicio@gmail.com" className="text-sky-500 hover:underline text-lg">
+                      shinecr.servicio@gmail.com
                     </a>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="border-2">
+            <Card className="border-2 border-gray-300">
               <CardContent className="pt-6">
                 <div className="flex items-start gap-4">
                   <div className="h-12 w-12 rounded-full bg-gray-200 flex items-center justify-center shrink-0">

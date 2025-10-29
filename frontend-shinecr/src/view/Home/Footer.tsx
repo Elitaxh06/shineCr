@@ -1,4 +1,4 @@
-import { Facebook, Instagram, MessageCircle, Twitter, Youtube } from "lucide-react"
+import { Facebook, Instagram, MessageCircle} from "lucide-react"
 
 export default function Footer() {
   return (
@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
-              <h3 className="text-xl font-bold mb-4">Lavacar Express</h3>
+              <h3 className="text-xl font-bold mb-4">ShineCR</h3>
               <p className="text-secondary-foreground/80 leading-relaxed">
                 Tu servicio de lavado profesional a domicilio. Calidad, rapidez y comodidad garantizada.
               </p>
@@ -67,43 +67,14 @@ export default function Footer() {
                     <MessageCircle className="h-5 w-5" />
                   </a>
                 </button>
-                <button
-                //   size="icon"
-                //   variant="outline"
-                  className="rounded-full cursor-pointer border border-slate-500 p-1.5 hover:bg-[#1DA1F2] hover:text-white hover:border-[#1DA1F2] bg-transparent transition-all hover:scale-110"
-                //   asChild
-                >
-                  <a
-                    href="https://twitter.com/lavacarexpress"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Twitter"
-                  >
-                    <Twitter className="h-5 w-5" />
-                  </a>
-                </button>
-                <button
-                //   size="icon"
-                //   variant="outline"
-                  className="rounded-full cursor-pointer border border-slate-500 p-1.5 hover:bg-[#FF0000] hover:text-white hover:border-[#FF0000] bg-transparent transition-all hover:scale-110"
-                //   asChild
-                >
-                  <a
-                    href="https://youtube.com/@lavacarexpress"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="YouTube"
-                  >
-                    <Youtube className="h-5 w-5" />
-                  </a>
-                </button>
+
               </div>
-              <p className="text-sm text-secondary-foreground/60 mt-4">@lavacarexpress</p>
+              <p className="text-sm text-secondary-foreground/60 mt-4">shinecr.servicio@gmail.com</p>
             </div>
           </div>
 
           <div className="border-t border-secondary-foreground/20 pt-8 text-center text-secondary-foreground/70">
-            <p>&copy; {new Date().getFullYear()} Lavacar Express. Todos los derechos reservados.</p>
+            <p>&copy; {new Date().getFullYear()} shineCr. Todos los derechos reservados.</p>
           </div>
         </div>
       </div>

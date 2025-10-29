@@ -76,9 +76,9 @@ export default function BookingCalendar() {
       <div className="container mx-auto px-4">
         <FramerMotion direction="up" duration={1}>
           <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-balance">Reserva tu Cita</h2>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-balance">Reservá tu Cita</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-              Selecciona el día y la hora que mejor te convenga. Te confirmaremos tu reserva de inmediato.
+              Seleccioná el día y la hora que mejor te convenga. Te confirmaremos tu reserva lo antes posible.
             </p>
           </div>
         </FramerMotion>

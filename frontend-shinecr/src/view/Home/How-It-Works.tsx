@@ -5,19 +5,19 @@ export default function  HowItWorks () {
     {
       number: "01",
       title: "Reserva por WhatsApp",
-      description: "Contáctanos por WhatsApp, Instagram o Facebook. Te confirmamos disponibilidad al instante.",
+      description: "Agendá tu servicio por mensaje directo, correo o teléfono.",
       icon: MessageCircle,
     },
     {
       number: "02",
       title: "Vamos a tu ubicación",
-      description: "Nuestro equipo llega a tu casa u oficina con todo el equipo profesional necesario.",
+      description: "Llegamos a donde estés, en cualquier punto de la GAM",
       icon: MapPin,
     },
     {
       number: "03",
-      title: "Lavado completo",
-      description: "Realizamos el servicio mientras tú sigues con tu día. Tu carro queda impecable en minutos.",
+      title: "Devolvemos el brillo a tu auto",
+      description: "Nuestro compromiso es dejar tu vehículo limpio, protegido y con un acabado profesional en cada servicio.",
       icon: Sparkles,
     },
   ]

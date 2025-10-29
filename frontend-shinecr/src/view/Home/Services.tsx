@@ -6,7 +6,7 @@ import PolicityPay from "../../components/PolicityPay"
 const services = [
   {
     name: "Básico",
-    price: "₡7,500",
+    price: "₡7,000",
     icon: Check,
     description: "Perfecto para mantenimiento regular",
     features: [
@@ -23,7 +23,9 @@ const services = [
     icon: Sparkles,
     description: "Nuestro servicio más popular",
     features: [
-      "Todo del paquete Básico",
+      "Lavado exterior completo",
+      "Secado manual con microfibra",
+      "Limpieza de llantas y rines",
       "Detalle extra de llantas",
       "Limpieza de plásticos internos",
       "Aromatizante dentro del vehículo",
