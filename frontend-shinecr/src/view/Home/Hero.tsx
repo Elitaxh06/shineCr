@@ -3,7 +3,7 @@ import FramerMotion from "../../components/FramerMotion"
 import { Droplets, Sparkles } from "lucide-react"
 import 
   logo
-from "../../../public/img/Logo.png"
+from "/img/Logotipo.png"
 export default function Hero() {
    const [isVisible, setIsVisible] = useState(false)
 
@@ -12,7 +12,7 @@ export default function Hero() {
   }, [])
 
   const scrollToCalendar = () => {
-    document.getElementById("calendario")?.scrollIntoView({ behavior: "smooth" })
+    document.getElementById("reservar")?.scrollIntoView({ behavior: "smooth" })
   }
 
   return (

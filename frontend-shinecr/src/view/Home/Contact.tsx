@@ -13,7 +13,7 @@ export function Contact() {
     e.preventDefault()
 
     const message = `Hola! Soy ${formData.name}. ${formData.message}`
-    const whatsappUrl = `https://wa.me/50612345678?text=${encodeURIComponent(message)}`
+    const whatsappUrl = `https://wa.me/50684800828?text=${encodeURIComponent(message)}`
 
     window.open(whatsappUrl, "_blank")
   }

@@ -63,7 +63,7 @@ export default function BookingCalendar() {
 
     if (method === "whatsapp") {
       const message = encodeURIComponent(bookingMessage)
-      window.open(`https://wa.me/50612345678?text=${message}`, "_blank")
+      window.open(`https://wa.me/50684800828?text=${message}`, "_blank")
     } else {
       const subject = encodeURIComponent("Reserva de Lavado de Carro")
       const body = encodeURIComponent(bookingMessage)
