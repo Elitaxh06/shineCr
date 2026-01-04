@@ -49,7 +49,7 @@ export default function Footer() {
                 //   asChild
                 >
                   <a
-                    href="https://facebook.com/lavacarexpress"
+                    href="https://www.facebook.com/profile.php?id=61585829451923&locale=es_LA"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Facebook"
@@ -63,7 +63,7 @@ export default function Footer() {
                   className="rounded-full cursor-pointer border border-slate-500 p-1.5 hover:bg-[#25D366] hover:text-white hover:border-[#25D366] bg-transparent transition-all hover:scale-110"
                 //   asChild
                 >
-                  <a href="https://wa.me/50612345678" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                  <a href="https://wa.me/50684800828" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
                     <MessageCircle className="h-5 w-5" />
                   </a>
                 </button>

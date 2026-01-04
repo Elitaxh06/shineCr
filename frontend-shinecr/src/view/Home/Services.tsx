@@ -58,8 +58,8 @@ const services = [
 ]
 export default function Services() {
     const handleWhatsAppClick = (serviceName: string) => {
-        const message = encodeURIComponent(`Hola! Me interesa el paquete ${serviceName}`)
-        window.open(`https://wa.me/50683745485?text=${message}`, "_blank")
+        const message = encodeURIComponent(`Buenas! Me interesa reservar el lavado ${serviceName}`)
+        window.open(`https://wa.me/50684800828?text=${message}`, "_blank")
     }
     return (
     <section id="servicios" className="py-20 md:py-32 bg-background">
