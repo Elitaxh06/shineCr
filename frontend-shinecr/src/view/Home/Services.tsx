@@ -6,7 +6,7 @@ import PolicityPay from "../../components/PolicityPay"
 const services = [
   {
     name: "Básico",
-    price: "₡7,000",
+    price: "₡6,000",
     icon: Check,
     description: "Perfecto para mantenimiento regular",
     features: [
@@ -27,10 +27,11 @@ const services = [
       "Secado manual con microfibra",
       "Limpieza de llantas y rines",
       "Detalle extra de llantas",
+      "Encerado de la carrocería",
       "Limpieza de plásticos internos",
       "Aromatizante dentro del vehículo",
       "Revisión rápida de vidrios y espejos",
-      "Aspirado de asientos y alfombras (proximamente)"
+      "Aspirado de asientos y alfombras"
     ],
     disable: false,
     popular: true,

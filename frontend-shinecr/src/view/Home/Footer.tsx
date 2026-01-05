@@ -34,7 +34,7 @@ export default function Footer() {
                 //   asChild
                 >
                   <a
-                    href="https://www.instagram.com/shinecr.lavado?igsh=MWphMDVtaWJrdXJlaQ%3D%3D&utm_source=qr"
+                    href="https://www.instagram.com/shinecr.autolavado/"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram"
