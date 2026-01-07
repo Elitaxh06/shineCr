@@ -1,5 +1,7 @@
 import { MessageCircle, MapPin, Sparkles } from "lucide-react"
 import FramerMotion from "../../components/FramerMotion"
+
+
 export default function  HowItWorks () {
     const steps = [
     {

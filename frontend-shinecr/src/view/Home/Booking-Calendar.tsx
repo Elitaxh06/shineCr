@@ -1,6 +1,5 @@
 "use client"
 import { useState } from "react"
-// import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../../components/ui/Card"
 import { MessageCircle, Mail, Calendar, Clock } from "lucide-react"
 import FramerMotion from "../../components/FramerMotion"
@@ -18,13 +17,17 @@ const TIME_SLOTS = [
   { id: "evening-2", time: "5:00 PM", label: "5:00 PM" },
 ]
 
-export default function BookingCalendar() {
+type BookingCalendarProps = {
+  selectedService: string | null
+}
+
+export default function BookingCalendar({ selectedService }: BookingCalendarProps) {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null)
   const [selectedTime, setSelectedTime] = useState<string | null>(null)
 
   // Generate next 14 days
   const getAvailableDates = () => {
-    const dates = []
+    const dates: Date[] = []
     const today = new Date()
     for (let i = 1; i <= 14; i++) {
       const date = new Date(today)
@@ -36,14 +39,6 @@ export default function BookingCalendar() {
 
   const availableDates = getAvailableDates()
 
-  // const formatDate = (date: Date) => {
-  //   return date.toLocaleDateString("es-CR", {
-  //     weekday: "short",
-  //     day: "numeric",
-  //     month: "short",
-  //   })
-  // }
-
   const formatFullDate = (date: Date) => {
     return date.toLocaleDateString("es-CR", {
       weekday: "long",
@@ -54,18 +49,18 @@ export default function BookingCalendar() {
   }
 
   const handleBooking = (method: "whatsapp" | "email") => {
-    if (!selectedDate || !selectedTime) {
-      alert("Por favor selecciona una fecha y hora")
+    if (!selectedDate || !selectedTime || !selectedService) {
+      alert("Por favor selecciona un servicio, fecha y hora")
       return
     }
 
-    const bookingMessage = `Hola! Me gustaría reservar un lavado de carro:\n\nFecha: ${formatFullDate(selectedDate)}\nHora: ${selectedTime}\n\n¿Está disponible?`
+    const bookingMessage = `Hola! Me gustaría reservar el servicio ${selectedService}:\n\nFecha: ${formatFullDate(selectedDate)}\nHora: ${selectedTime}\n\n¿Está disponible?`
 
     if (method === "whatsapp") {
       const message = encodeURIComponent(bookingMessage)
       window.open(`https://wa.me/50684800828?text=${message}`, "_blank")
     } else {
-      const subject = encodeURIComponent("Reserva de Lavado de Carro")
+      const subject = encodeURIComponent(`Reserva de ${selectedService}`)
       const body = encodeURIComponent(bookingMessage)
       window.location.href = `mailto:shinecr.servicio@gmail.com?subject=${subject}&body=${body}`
     }
@@ -78,7 +73,7 @@ export default function BookingCalendar() {
           <div className="text-center space-y-4 mb-16">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-balance">Reservá tu Cita</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-              Seleccioná el día y la hora que mejor te convenga. Te confirmaremos tu reserva lo antes posible.
+              Seleccioná el servicio, día y hora que mejor te convenga. Te confirmaremos tu reserva lo antes posible.
             </p>
           </div>
         </FramerMotion>
@@ -87,102 +82,121 @@ export default function BookingCalendar() {
           {/* Date Selection */}
           <FramerMotion direction="right" duration={1}>
             <Card className="border border-slate-300">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Calendar className="h-5 w-5" />
-                Selecciona una Fecha
-              </CardTitle>
-              <CardDescription>Elige el día que prefieres para tu lavado</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-7 gap-2">
-                {availableDates.map((date) => (
-                  <button
-                    key={date.toISOString()}
-                    onClick={() => setSelectedDate(date)}
-                    className={`p-3 rounded-lg border border-slate-300 text-center transition-all cursor-pointer ${
-                      selectedDate?.toDateString() === date.toDateString()
-                        ? "border-primary bg-blue-700 text-white font-semibold"
-                        : "border-border hover:bg-slate-100 hover:border-blue-500"
-                    }`}
-                  >
-                    <div className="text-xs font-medium capitalize">
-                      {date.toLocaleDateString("es-CR", { weekday: "short" })}
-                    </div>
-                    <div className="text-lg font-bold mt-1">{date.getDate()}</div>
-                    <div className="text-xs capitalize">{date.toLocaleDateString("es-CR", { month: "short" })}</div>
-                  </button>
-                ))}
-              </div>
-            </CardContent>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Calendar className="h-5 w-5" />
+                  Selecciona una Fecha
+                </CardTitle>
+                <CardDescription>Elige el día que prefieres para tu lavado</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-7 gap-2">
+                  {availableDates.map((date) => (
+                    <button
+                      key={date.toISOString()}
+                      onClick={() => setSelectedDate(date)}
+                      className={`p-3 rounded-lg border border-slate-300 text-center transition-all cursor-pointer ${
+                        selectedDate?.toDateString() === date.toDateString()
+                          ? "border-primary bg-blue-700 text-white font-semibold"
+                          : "border-border hover:bg-slate-100 hover:border-blue-500"
+                      }`}
+                    >
+                      <div className="text-xs font-medium capitalize">
+                        {date.toLocaleDateString("es-CR", { weekday: "short" })}
+                      </div>
+                      <div className="text-lg font-bold mt-1">{date.getDate()}</div>
+                      <div className="text-xs capitalize">{date.toLocaleDateString("es-CR", { month: "short" })}</div>
+                    </button>
+                  ))}
+                </div>
+              </CardContent>
             </Card>
           </FramerMotion>
-        
 
           {/* Time Selection */}
           <FramerMotion direction="left" duration={1}>
             <Card className="border border-slate-300">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Clock className="h-5 w-5" />
-                Selecciona una Hora
-              </CardTitle>
-              <CardDescription>Escoge el horario que mejor se ajuste a tu día</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
-                {TIME_SLOTS.map((slot) => (
-                  <button
-                    key={slot.id}
-                    onClick={() => setSelectedTime(slot.time)}
-                    disabled={!selectedDate}
-                    className={`p-4 cursor-pointer rounded-lg border text-center transition-all  disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:border-border disabled:hover:bg-transparent ${
-                      selectedTime === slot.time
-                        ? "border-primary bg-blue-700 text-white font-semibold"
-                        : "border-border hover:bg-slate-100 hover:border-blue-500"
-                    }`}
-                  >
-                    <div className="font-semibold">{slot.label}</div>
-                  </button>
-                ))}
-              </div>
-            </CardContent>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Clock className="h-5 w-5" />
+                  Selecciona una Hora
+                </CardTitle>
+                <CardDescription>Escoge el horario que mejor se ajuste a tu día</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+                  {TIME_SLOTS.map((slot) => (
+                    <button
+                      key={slot.id}
+                      onClick={() => setSelectedTime(slot.time)}
+                      disabled={!selectedDate}
+                      className={`p-4 cursor-pointer rounded-lg border text-center transition-all  disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:border-border disabled:hover:bg-transparent ${
+                        selectedTime === slot.time
+                          ? "border-primary bg-blue-700 text-white font-semibold"
+                          : "border-border hover:bg-slate-100 hover:border-blue-500"
+                      }`}
+                    >
+                      <div className="font-semibold">{slot.label}</div>
+                    </button>
+                  ))}
+                </div>
+              </CardContent>
             </Card>
           </FramerMotion>
 
-          {/* Booking Summary */}
+          {selectedDate && selectedTime && !selectedService && (
+            <div className="text-center space-y-2">
+              <div className="font-medium ">Para ver tú reserva</div>
+              <div className="text-2xl font-bold text-card-foreground">Selecciona un servicio</div>
+              <button className="gap-2 bg-blue-600 hover:bg-blue-500 rounded-xl px-4 py-2 cursor-pointer font-semibold text-white hover:scale-105 transition-transform duration-100">
+                <a href="#servicios">Ver servicios</a>
+              </button>
+            </div>
+          )}
+
+          {selectedDate && !selectedTime && selectedService && (
+            <div className="text-center space-y-2">
+              <div className="font-medium ">Para ver tú reserva</div>
+              <div className="text-2xl font-bold text-card-foreground">Selecciona una hora</div>
+            </div>
+          )}
+
           
-          {selectedDate && selectedTime && (
+          {/* Booking Summary */}
+          {selectedDate && selectedTime && selectedService && (
             <FramerMotion direction="up" duration={1}>
               <Card className="border border-blue-500 bg-slate-100">
-              <CardContent className="pt-6">
-                <div className="space-y-6">
-                  <div className="text-center space-y-2">
-                    <div className="text-sm font-medium text-muted-foreground">Tu reserva:</div>
-                    <div className="text-2xl font-bold text-card-foreground">
-                      {formatFullDate(selectedDate)} a las {selectedTime}
+                <CardContent className="pt-6">
+                  <div className="space-y-6">
+                    <div className="text-center space-y-2">
+                      <div className="text-sm font-medium text-muted-foreground">Tu reserva:</div>
+                      <div className="text-2xl font-bold text-card-foreground">
+                        {selectedService} — {formatFullDate(selectedDate)} a las {selectedTime}
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="grid gap-3 sm:grid-cols-2">
-                    <button  className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 rounded-xl px-4 py-2 cursor-pointer font-semibold text-white" onClick={() => handleBooking("whatsapp")}>
-                      <MessageCircle className="h-5 w-5" />
-                      Reservar por WhatsApp
-                    </button>
-                    <button
-                      className="w-full flex items-center justify-center gap-2 bg-transparent border rounded-xl px-4 py-2 border-slate-300 cursor-pointer font-semibold text-black hover:bg-green-500 hover:text-white"
-                      onClick={() => handleBooking("email")}
-                    >
-                      <Mail className="h-5 w-5" />
-                      Reservar por Email
-                    </button>
-                  </div>
+                    <div className="grid gap-3 sm:grid-cols-2">
+                      <button
+                        className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 rounded-xl px-4 py-2 cursor-pointer font-semibold text-white"
+                        onClick={() => handleBooking("whatsapp")}
+                      >
+                        <MessageCircle className="h-5 w-5" />
+                        Reservar por WhatsApp
+                      </button>
+                      <button
+                        className="w-full flex items-center justify-center gap-2 bg-transparent border rounded-xl px-4 py-2 border-slate-300 cursor-pointer font-semibold text-black hover:bg-green-500 hover:text-white"
+                        onClick={() => handleBooking("email")}
+                      >
+                        <Mail className="h-5 w-5" />
+                        Reservar por Email
+                      </button>
+                    </div>
 
-                  <p className="text-xs text-center text-muted-foreground">
-                    Te confirmaremos tu reserva en menos de 30 minutos
-                  </p>
-                </div>
-              </CardContent>
+                    <p className="text-xs text-center text-muted-foreground">
+                      Te confirmaremos tu reserva en menos de 30 minutos
+                    </p>
+                  </div>
+                </CardContent>
               </Card>
             </FramerMotion>
           )}
