@@ -14,7 +14,7 @@ const services = [
     description: "Perfecto para mantenimiento regular",
     features: [
       "Lavado exterior completo",
-      "Secado manual con microfibra",
+      "Secado manual",
       "Limpieza de llantas y rines",
     ],
     disable: false,
@@ -27,7 +27,7 @@ const services = [
     description: "Nuestro servicio más popular",
     features: [
       "Lavado exterior completo",
-      "Secado manual con microfibra",
+      "Secado manual",
       "Limpieza de llantas y rines",
       "Detalle extra de llantas",
       "Encerado de la carrocería",

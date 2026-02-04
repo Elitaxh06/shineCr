@@ -1,21 +1,20 @@
 import './App.css'
-import Hero from './view/Home/Hero'
-import HowItWorks from './view/Home/How-It-Works.tsx'
-import SelectedService from './view/Home/SelectedService.tsx'
-import Footer from './view/Home/Footer.tsx'
-import WhatsappFixed from './components/WhatsappFixed'
-import { Contact } from './view/Home/Contact.tsx'
+import Home from './view/Home/Home.tsx'
+import GalleryPage from './view/Galery/Galery.tsx'
+import { Routes, Route } from 'react-router'
+import ScrollToTop from './components/ScrollToTop.tsx'
 function App() {
   
   return (
-    <>
-      <Hero />
-      <SelectedService />
-      <HowItWorks />
-      <Contact />
-      <Footer />
 
-      <WhatsappFixed />
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element ={<Home /> } />
+        <Route path="/galeria" element ={<GalleryPage /> } />
+      </Routes>
+
+
     </>
   )
 }
