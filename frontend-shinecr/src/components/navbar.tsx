@@ -111,12 +111,12 @@ export function Navbar() {
               className="bg-slate-800 border-cyan-800 w-[300px] [&>button]:text-white [&>button]:cursor-pointer"
             >
               <div className="flex flex-col h-full">
-                <div className="flex items-center justify-between mb-8">
-                  <div className="flex items-center gap-2">
-                    <Droplets className="h-6 w-6 text-cyan-500" />
+                <div className="flex items-center justify-between mb-12">
+                  <div className="flex items-center gap-2 "> 
+                    {/* <Droplets className="h-6 w-6 text-cyan-500" />
                     <span className="text-lg font-bold text-white">
                       Shine CR
-                    </span>
+                    </span>  */}
                   </div>
                 </div>
 
